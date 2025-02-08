@@ -118,7 +118,7 @@ dark_knight_rises["year"] = 2012
 dark_knight_rises["rating"] = "PG-13"
 dark_knight_rises["studio"] = "Warner Bros."
 
-# puts "Sample data added"
+# puts "Sample movie data added"
 
 # Inserting actor data
 christian_bale = Actor.new
@@ -129,6 +129,8 @@ michael_caine["name"] = "Michael Caine"
 
 liam_neeson = Actor.new
 liam_neeson["name"] = "Liam Neeson"
+
+# puts "Sample actor data added"
 
 # Inserting role data
 role1 = Role.new
@@ -146,13 +148,19 @@ role3["movie"] = batman_begins
 role3["actor"] = liam_neeson
 role3["character"] = "Ra's Al Ghul"
 
+# puts "Sample role data added"
+
 # Prints a header for the movies output
 puts "Movies"
 puts "======"
 puts ""
 
 # Query the movies data and loop through the results to display the movies output.
-# TODO!
+movies = [batman_begins, dark_knight, dark_knight_rises]
+
+movies.each do |movie|
+  puts "#{movie['title']}  #{movie['year']}  #{movie['rating']}  #{movie['studio']}"
+end
 
 # Prints a header for the cast output
 puts ""
