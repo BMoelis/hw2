@@ -78,7 +78,15 @@
 # TODO!
 
 # Generate models and tables, according to the domain model.
-# TODO!
+# Models
+class Movie
+end
+
+class Actor
+end
+
+class Role
+end
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
