@@ -81,12 +81,21 @@
 # Models
 class Movie < Hash
 end
+# test_movie = Movie.new
+# test_movie["title"] = "TestMovie"
+# puts test_movie["title"]
 
 class Actor < Hash
 end
+# test_actor = Actor.new
+# test_actor["name"] = "TestActor"
+# puts test_actor["name"]
 
 class Role < Hash
 end
+# test_role = Role.new
+# test_role["character"] = "TestRole"
+# puts test_role["character"]
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
