@@ -79,13 +79,13 @@
 
 # Generate models and tables, according to the domain model.
 # Models
-class Movie
+class Movie < Hash
 end
 
-class Actor
+class Actor < Hash
 end
 
-class Role
+class Role < Hash
 end
 
 # Insert data into the database that reflects the sample data shown above.
