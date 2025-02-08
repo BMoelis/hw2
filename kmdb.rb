@@ -99,7 +99,52 @@ end
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
-# TODO!
+# Inserting movie data
+batman_begins = Movie.new
+batman_begins["title"] = "Batman Begins"
+batman_begins["year"] = 2005
+batman_begins["rating"] = "PG-13"
+batman_begins["studio"] = "Warner Bros."
+
+dark_knight = Movie.new
+dark_knight["title"] = "The Dark Knight"
+dark_knight["year"] = 2008
+dark_knight["rating"] = "PG-13"
+dark_knight["studio"] = "Warner Bros."
+
+dark_knight_rises = Movie.new
+dark_knight_rises["title"] = "The Dark Knight Rises"
+dark_knight_rises["year"] = 2012
+dark_knight_rises["rating"] = "PG-13"
+dark_knight_rises["studio"] = "Warner Bros."
+
+# puts "Sample data added"
+
+# Inserting actor data
+christian_bale = Actor.new
+christian_bale["name"] = "Christian Bale"
+
+michael_caine = Actor.new
+michael_caine["name"] = "Michael Caine"
+
+liam_neeson = Actor.new
+liam_neeson["name"] = "Liam Neeson"
+
+# Inserting role data
+role1 = Role.new
+role1["movie"] = batman_begins
+role1["actor"] = christian_bale
+role1["character"] = "Bruce Wayne"
+
+role2 = Role.new
+role2["movie"] = batman_begins
+role2["actor"] = michael_caine
+role2["character"] = "Alfred"
+
+role3 = Role.new
+role3["movie"] = batman_begins
+role3["actor"] = liam_neeson
+role3["character"] = "Ra's Al Ghul"
 
 # Prints a header for the movies output
 puts "Movies"
