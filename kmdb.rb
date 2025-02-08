@@ -158,7 +158,7 @@ puts ""
 # Query the movies data and loop through the results to display the movies output.
 movies = [batman_begins, dark_knight, dark_knight_rises]
 
-movies.each do |movie|
+for movie in movies
   puts "#{movie['title']}  #{movie['year']}  #{movie['rating']}  #{movie['studio']}"
 end
 
@@ -169,4 +169,11 @@ puts "========"
 puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
-# TODO!
+roles = [role1, role2, role3]
+
+for role in roles
+  movie_title = role["movie"]["title"]
+  actor_name = role["actor"]["name"]
+  character_name = role["character"]
+  puts "#{movie_title}  #{actor_name}  #{character_name}"
+end
