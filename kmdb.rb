@@ -75,7 +75,10 @@
 
 # Delete existing data, so you'll start fresh each time this script is run.
 # Use `Model.destroy_all` code.
-# TODO!
+movies = []
+actors = []
+roles = []
+puts "Previous data deleted"
 
 # Generate models and tables, according to the domain model.
 # Models
