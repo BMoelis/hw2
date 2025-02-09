@@ -75,82 +75,188 @@
 
 # Delete existing data, so you'll start fresh each time this script is run.
 # Use `Model.destroy_all` code.
-movies = []
-actors = []
-roles = []
-puts "Previous data deleted"
+Movie.destroy_all
+Actor.destroy_all
+Role.destroy_all
+Studio.destroy_all
 
 # Generate models and tables, according to the domain model.
 # Models
-class Movie < Hash
-end
-# test_movie = Movie.new
-# test_movie["title"] = "TestMovie"
-# puts test_movie["title"]
-
-class Actor < Hash
-end
-# test_actor = Actor.new
-# test_actor["name"] = "TestActor"
-# puts test_actor["name"]
-
-class Role < Hash
-end
-# test_role = Role.new
-# test_role["character"] = "TestRole"
-# puts test_role["character"]
+# rails generate model Movie
+# rails generate model Actor
+# rails generate model Role
+# rails generate model Studio
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
+# Inserting studio data
+
+studio1 = Studio.new
+studio1["name"] = "Warner Bros."
+studio1.save
+
 # Inserting movie data
-batman_begins = Movie.new
-batman_begins["title"] = "Batman Begins"
-batman_begins["year"] = 2005
-batman_begins["rating"] = "PG-13"
-batman_begins["studio"] = "Warner Bros."
 
-dark_knight = Movie.new
-dark_knight["title"] = "The Dark Knight"
-dark_knight["year"] = 2008
-dark_knight["rating"] = "PG-13"
-dark_knight["studio"] = "Warner Bros."
+movie1 = Movie.new
+movie1["title"] = "Batman Begins"
+movie1["year"] = 2005
+movie1["rating"] = "PG-13"
+movie1["studio_id"] = studio1["id"]
+movie1.save
 
-dark_knight_rises = Movie.new
-dark_knight_rises["title"] = "The Dark Knight Rises"
-dark_knight_rises["year"] = 2012
-dark_knight_rises["rating"] = "PG-13"
-dark_knight_rises["studio"] = "Warner Bros."
+movie2 = Movie.new
+movie2["title"] = "The Dark Knight"
+movie2["year"] = 2008
+movie2["rating"] = "PG-13"
+movie2["studio_id"] = studio1["id"]
+movie2.save
+
+movie3 = Movie.new
+movie3["title"] = "The Dark Knight Rises"
+movie3["year"] = 2012
+movie3["rating"] = "PG-13"
+movie3["studio_id"] = studio1["id"]
+movie3.save
 
 # puts "Sample movie data added"
 
 # Inserting actor data
-christian_bale = Actor.new
-christian_bale["name"] = "Christian Bale"
+actor1 = Actor.new
+actor1["name"] = "Christian Bale"
+actor1.save
 
-michael_caine = Actor.new
-michael_caine["name"] = "Michael Caine"
+actor2 = Actor.new
+actor2["name"] = "Michael Caine"
+actor2.save
 
-liam_neeson = Actor.new
-liam_neeson["name"] = "Liam Neeson"
+actor3 = Actor.new
+actor3["name"] = "Liam Neeson"
+actor3.save
+
+actor4 = Actor.new
+actor4["name"] = "Katie Holmes"
+actor4.save
+
+actor5 = Actor.new
+actor5["name"] = "Gary Oldman"
+actor5.save
+
+actor6 = Actor.new
+actor6["name"] = "Heath Ledger"
+actor6.save
+
+actor7 = Actor.new
+actor7["name"] = "Aaron Eckhart"
+actor7.save
+
+actor8 = Actor.new
+actor8["name"] = "Maggie Gyllenhaal"
+actor8.save
+
+actor9 = Actor.new
+actor9["name"] = "Tom Hardy"
+actor9.save
+
+actor10 = Actor.new
+actor10["name"] = "Joseph Gordon-Levitt"
+actor10.save
+
+actor11 = Actor.new
+actor11["name"] = "Anne Hathawawy"
+actor11.save
 
 # puts "Sample actor data added"
 
 # Inserting role data
 role1 = Role.new
-role1["movie"] = batman_begins
-role1["actor"] = christian_bale
+role1["movie_id"] = movie1["id"]
+role1["actor_id"] = actor1["id"]
 role1["character"] = "Bruce Wayne"
+role1.save
 
 role2 = Role.new
-role2["movie"] = batman_begins
-role2["actor"] = michael_caine
+role2["movie_id"] = movie1["id"]
+role2["actor_id"] = actor2["id"]
 role2["character"] = "Alfred"
+role2.save
 
 role3 = Role.new
-role3["movie"] = batman_begins
-role3["actor"] = liam_neeson
+role3["movie_id"] = movie1["id"]
+role3["actor_id"] = actor3["id"]
 role3["character"] = "Ra's Al Ghul"
+role3.save
 
+role4 = Role.new
+role4["movie_id"] = movie1["id"]
+role4["actor_id"] = actor4["id"]
+role4["character"] = "Rachel Dawes"
+role4.save
+
+role5 = Role.new
+role5["movie_id"] = movie1["id"]
+role5["actor_id"] = actor5["id"]
+role5["character"] = "Commissioner Gordon"
+role5.save
+
+role6 = Role.new
+role6["movie_id"] = movie2["id"]
+role6["actor_id"] = actor1["id"]
+role6["character"] = "Bruce Wayne"
+role6.save
+
+role7 = Role.new
+role7["movie_id"] = movie2["id"]
+role7["actor_id"] = actor6["id"]
+role7["character"] = "Joker"
+role7.save
+
+role8 = Role.new
+role8["movie_id"] = movie2["id"]
+role8["actor_id"] = actor7["id"]
+role8["character"] = "Harvey Dent"
+role8.save
+
+role9 = Role.new
+role9["movie_id"] = movie2["id"]
+role9["actor_id"] = actor2["id"]
+role9["character"] = "Alfred"
+role9.save
+
+role10 = Role.new
+role10["movie_id"] = movie2["id"]
+role10["actor_id"] = actor8["id"]
+role10["character"] = "Rachel Dawes"
+role10.save
+
+role11 = Role.new
+role11["movie_id"] = movie3["id"]
+role11["actor_id"] = actor1["id"]
+role11["character"] = "Bruce Wayne"
+role11.save
+
+role12 = Role.new
+role12["movie_id"] = movie3["id"]
+role12["actor_id"] = actor5["id"]
+role12["character"] = "Commissioner Gordon"
+role12.save
+
+role13 = Role.new
+role13["movie_id"] = movie3["id"]
+role13["actor_id"] = actor9["id"]
+role13["character"] = "Bane"
+role13.save
+
+role14 = Role.new
+role14["movie_id"] = movie3["id"]
+role14["actor_id"] = actor10["id"]
+role14["character"] = "John Blake"
+role14.save
+
+role15 = Role.new
+role15["movie_id"] = movie3["id"]
+role15["actor_id"] = actor11["id"]
+role15["character"] = "Selina Kyle"
+role15.save
 # puts "Sample role data added"
 
 # Prints a header for the movies output
@@ -159,10 +265,13 @@ puts "======"
 puts ""
 
 # Query the movies data and loop through the results to display the movies output.
-movies = [batman_begins, dark_knight, dark_knight_rises]
 
-for movie in movies
-  puts "#{movie['title']}  #{movie['year']}  #{movie['rating']}  #{movie['studio']}"
+for movie in Movie.all
+  title = movie["title"]
+  year = movie["year"]
+  rating = movie["rating"]
+  studio = movie["studio_id"]
+  puts "#{title} #{year} #{rating} #{studio}"
 end
 
 # Prints a header for the cast output
@@ -172,11 +281,10 @@ puts "========"
 puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
-roles = [role1, role2, role3]
 
-for role in roles
-  movie_title = role["movie"]["title"]
-  actor_name = role["actor"]["name"]
-  character_name = role["character"]
-  puts "#{movie_title}  #{actor_name}  #{character_name}"
-end
+# for role in Role.all
+#   movie_title = role["movie"]["title"]
+#   actor_name = role["actor"]["name"]
+#   character_name = role["character"]
+#   puts "#{movie_title}  #{actor_name}  #{character_name}"
+# end
