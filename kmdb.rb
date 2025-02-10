@@ -270,7 +270,7 @@ for movie in Movie.all
   title = movie["title"]
   year = movie["year"]
   rating = movie["rating"]
-  studio = movie["studio_id"]
+  studio = movie["studio"]
   puts "#{title} #{year} #{rating} #{studio}"
 end
 
@@ -283,8 +283,8 @@ puts ""
 # Query the cast data and loop through the results to display the cast output for each movie.
 
 # for role in Role.all
-#   movie_title = role["movie"]["title"]
-#   actor_name = role["actor"]["name"]
+#   movie_title = role["movie"]
+#   actor_name = role["actor_id"]
 #   character_name = role["character"]
 #   puts "#{movie_title}  #{actor_name}  #{character_name}"
 # end
